@@ -1,0 +1,24 @@
+.controls-form button {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  width: 50%;
+}
+
+.table-pagination li a {
+  color: var(--primary-color);
+}
+
+#pagePrev, #pageNext {
+  display: none;
+}
+
+#misSummaryTable_length,#misSummaryTable_filter,#misSummaryTable_paginate,#misSummaryTable_info{
+  display: none;
+}
+
+#misSummaryTable_wrapper{
+  display: block;
+}
+#Summary_Report{
+  color:white;
+}

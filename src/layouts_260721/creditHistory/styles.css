@@ -1,0 +1,45 @@
+.controls-form button {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  width: 50%;
+}
+
+.table-pagination li a {
+  color: var(--primary-color);
+}
+
+.creditHistory ul.pagination li{
+  display: block;
+}
+#misTable_wrapper{
+  display: block;
+}
+#misTable_filter{
+  display: none;
+}
+#misTable_length{
+  float: left;
+}
+#misTable_length select{
+  margin: 5px;
+}
+.xdsoft_datetimepicker{
+  display: none;
+}
+.paginate_button a {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+div.dataTables_wrapper div.dataTables_paginate {
+    margin-top: 8px;
+  }
+  li.paginate_button.active a {
+    z-index: 1;
+    color: #fff;
+    background-color: #4099ff;
+    border-color: #4099ff;
+}

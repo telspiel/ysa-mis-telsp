@@ -1,0 +1,94 @@
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+}
+.sidebar {
+    width: 250px;
+    height:40px;
+    background-color: #582c4f;
+    float: left;
+    width:100%;
+    margin: 0 auto;
+/*    padding-top: 50px; */
+  }
+  ul#nav li{
+    list-style: none;
+  }
+  ul{
+    padding-left: 0px;
+  }
+  ul#nav li a {
+    color: white;
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+  }
+  ul#nav li a span{
+    line-height: 1.2em;
+  }
+
+  ul#nav li a:hover {
+    text-decoration: none;
+    color: black;
+    background:rgb(149, 218, 251);
+    border-left: blue 2px solid;
+  }
+
+  ul#nav li.active {
+    background-color: #337ab7;
+    color: #fff;
+  }
+.paginationNav{
+text-align:center;
+}
+
+.rad-info-box {
+  margin-bottom: 16px;
+  box-shadow: 1px 1px 2px 0 #cccccc;
+  padding: 20px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  background: white !important;
+}
+
+.rad-info-box i {
+  display: block;
+  background-clip: padding-box;
+  margin-right: 15px;
+  height: 70px;
+/*  width: 60px; */
+  border-radius: 100%;
+  line-height: 70px;
+  text-align: center;
+  font-size: 3em;
+  position: absolute;
+}
+
+.rad-info-box .value,
+.rad-info-box .heading {
+  display: block;
+  position: relative;
+  color: #515d6e;
+  text-align: right;
+  z-index: 10;
+}
+
+.rad-info-box .heading {
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.rad-info-box .value {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.rad-txt-success {
+  color: var(--primary-color);
+}
+

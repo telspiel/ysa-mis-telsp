@@ -1,0 +1,47 @@
+
+<div class="container-fluid" img src="/images/banner.jpg" alt="background">
+        <div class="col-md-5 m-auto">
+            <div class="card mt-5 login-div">
+                <div class="card-header"><h4>Login Page</h4></div>
+                <div class="card-body">
+<!--                    <div class="col-md-12 logo"><img src="/images/logo.png" alt="logo"></div> -->
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="uname">Enter Username</label>
+                            <input type="text" name="uname" id="userId" class="form-control" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Enter Password</label>
+                            <input type="password" name="pass" id="userPass" class="form-control" placeholder="Your Password">
+                        </div>
+                        <div class="form-group checkbox">
+                        <label><input type="checkbox" id="rememberMe"> Remember Me</label>
+                    </div>
+                    <div class="otp-wrapper otp-event d-none">
+                        <h5 class="text-center">Listen to your mobile, we have sent you code to verify you</h5>
+                        <div class="otp-container">
+                            <input type="tel" id="otp-number-input-1" class="otp-number-input" maxlength="1"
+                                autocomplete="off">
+                            <input type="tel" id="otp-number-input-2" class="otp-number-input" maxlength="1"
+                                autocomplete="off">
+                            <input type="tel" id="otp-number-input-3" class="otp-number-input" maxlength="1"
+                                autocomplete="off">
+                            <input type="tel" id="otp-number-input-4" class="otp-number-input" maxlength="1"
+                                autocomplete="off">
+                        </div>
+                        <div>
+                            <button id="confirm" type="button" class="otp-submit" disabled>Verify OTP</button><br />
+                            <a href="#" id="resend-otp"> Not Received Yet ? Resend OTP </a>
+                        </div>
+                    </div>
+                        <div class="form-group text-center user-verify-btn">
+                            {{!-- <a href="index.html"> --}}
+                            <button type="submit" class="btn btn-md btn-primary login-btn" value="submit">Login</button>
+                            {{!-- </a> --}}
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">&copy; All Rights Reserved</div>
+            </div>
+        </div>
+    </div>
