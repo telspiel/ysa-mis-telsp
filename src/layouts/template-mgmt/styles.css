@@ -28,7 +28,8 @@ button.btn-small{
   padding: 10px 20px;
 }
 button#insertVar{
-  margin-left:0
+  margin-left:0;
+  padding: 3px;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

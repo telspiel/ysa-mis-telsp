@@ -13,13 +13,13 @@
           <!-- Nav tabs -->
           <ul class="nav nav-tabs mb-4">
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#add">Add Content Template</a>
+              <a class="nav-link active" data-toggle="tab" href="#add"><b>Add</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#view" id="view-campaign-tab">View Content Template</a>
+              <a class="nav-link" data-toggle="tab" href="#view" id="view-campaign-tab"><b>View</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#upload" id="upload-campaign-tab">Upload Content Template</a>
+              <a class="nav-link" data-toggle="tab" href="#upload" id="upload-campaign-tab"><b>Upload</b></a>
             </li>
           </ul>
 
@@ -77,14 +77,14 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                       <label for="deptName" class="col-md-4 col-form-label">Select Sender Id</label>
-                       <div class="col-md-6">
-                         <select type="text" class="form-control" id="senderId" name="senderId" required>
-                           <option readonly selected value="">-- Select --</option>
-                         </select>
-                       </div>
-                     </div>
-                         <div class="row">
+                        <label for="deptName" class="col-md-4 col-form-label">Select Sender ID</label>
+                        <div class="col-md-6">
+                          <select type="text" class="form-control" id="senderId" name="senderId" required>
+                            <option readonly selected value="">-- Select --</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
                             <div class="form-group">
@@ -116,10 +116,11 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="operatorTemplateId" class="col-md-4 col-form-label">Operator Template Id</label>
+                        <label for="operatorTemplateId" class="col-md-4 col-form-label">Operator Template ID</label>
                         <div class="col-md-6">
                           <input type="number" class="form-control" id="operatorTemplateId" name="operatorTemplateId"
-                            value="" title="Title" placeholder="Template Id" autocomplete="off" required pattern="[0-9]">
+                            value="" title="Title" placeholder="Template ID" autocomplete="off" required
+                            pattern="[0-9]">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -212,7 +213,7 @@
             </div>
 
             <div class="tab-pane" id="upload">
-              <div class="col-md-6 py-4 m-auto">
+              <div class="col-md-8 py-4 m-auto">
 
                 <div id="upload-gblacklist-form" class="gblacklist-form">
                   <h4>Upload Content Template</h4>
@@ -225,67 +226,67 @@
                           <option disabled selected> -- Choose User --</option>
                         </select>
                       </div> --}}
-                                    <div class="row">
+                      <div class="row">
                         <div class="col-md-4 row">
-                            <label for="fileType-0" class="col-form-label">File  Type</label>
-                      </div>
-                      <div class="col-md-8 mt-2">
-                      <div class="form-group row">
-                        <div class="custom-control custom-radio col-md-3">
-                          <input class="custom-control-input fileType" type="radio" name="fileType" value="HEADER_FILE" id="fileType-0"
-                            title="Select Message Type" checked="checked">
-                          <label class="custom-control-label" for="fileType-0">HEADER_FILE</label>
+                          <label for="fileType-0" class="col-form-label">File Type</label>
                         </div>
-                        <div class="custom-control custom-radio col-md-3">
-                          <input class="custom-control-input fileType" type="radio" name="fileType" value="TEMPLATE_FILE"
-                            id="fileType-2" title="Select Message Type"> <label class="custom-control-label"
-                            for="fileType-2">TEMPLATE_FILE</label>
-                        </div>
-                        </div>
+                        <div class="col-md-8 mt-2">
+                          <div class="form-group row">
+                            <div class="custom-control custom-radio col-md-3">
+                              <input class="custom-control-input fileType" type="radio" name="fileType"
+                                value="HEADER_FILE" id="fileType-0" title="Select Message Type" checked="checked">
+                              <label class="custom-control-label" for="fileType-0">HEADER_FILE</label>
+                            </div>
+
+                            <div class="custom-control custom-radio col-md-3">
+                              <input class="custom-control-input fileType" type="radio" name="fileType"
+                                value="TEMPLATE_FILE" id="fileType-2" title="Select Message Type"> <label
+                                class="custom-control-label" for="fileType-2">TEMPLATE_FILE</label>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class=" row ">
-
-                          <div class="col-md-4 row">
-                         <label for="fileTypes-0" class="col-form-label">Template File Type</label>
-                         </div>
-                         <div class="col-md-6 mt-2">
-                           <div class="row">
-                           <div class="custom-control custom-radio col-md-2">
-                             <input class="custom-control-input" type="radio" name="fileTypes" value="csv" id="fileTypes-0"
-                               title="Select File Type" checked="checked"> <label class="custom-control-label"
-                               for="fileTypes-0">csv</label>
-                           </div>
-                           <div class="custom-control custom-radio col-md-2 tmpfile">
-                             <input class="custom-control-input" type="radio" name="fileTypes" value="xlsx"
-                               id="fileTypes-1" title="Select File Type">
-                             <label class="custom-control-label" for="fileTypes-1">Xlsx</label>
-                           </div>
-                           <div class="custom-control custom-radio col-md-2 tmpfile">
-                             <input class="custom-control-input" type="radio" name="fileTypes" value="xls" id="fileTypes-2"
-                               title="Select File Type">
-                             <label class="custom-control-label" for="fileTypes-2">Xls</label>
-                           </div>
-                           </div>
-                         </div>
+                        <div class="col-md-4 row">
+                          <label for="fileTypes-0" class="col-form-label">Template File Type</label>
                         </div>
+                        <div class="col-md-6 mt-2">
+                          <div class="row">
+                            <div class="custom-control custom-radio col-md-2">
+                              <input class="custom-control-input" type="radio" name="fileTypes" value="csv"
+                                id="fileTypes-0" title="Select File Type" checked="checked"> <label
+                                class="custom-control-label" for="fileTypes-0">csv</label>
+                            </div>
+                            <div class="custom-control custom-radio col-md-2 tmpfile">
+                              <input class="custom-control-input" type="radio" name="fileTypes" value="xlsx"
+                                id="fileTypes-1" title="Select File Type">
+                              <label class="custom-control-label" for="fileTypes-1">Xlsx</label>
+                            </div>
+                            <div class="custom-control custom-radio col-md-2 tmpfile">
+                              <input class="custom-control-input" type="radio" name="fileTypes" value="xls"
+                                id="fileTypes-2" title="Select File Type">
+                              <label class="custom-control-label" for="fileTypes-2">Xls</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                       <div class="form-group row">
-                        <label for="orgName" class="">File </label>
+                        <label for="orgName" class=""> File </label>
                         <div class="custom-file">
                           <input type="file" class="custom-file-input" id="selectFile" name="files"
                             accept=".csv, .txt, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
-                          <label class="custom-file-label" for="customFile">Choose file</label>
+                          <label class="custom-file-label" for="customFile" style="width: 500px;">Choose file</label>
                         </div>
                         <small>(only csv comma separated is allowed)</small>
                       </div>
 
 
-                      <div class="form-group row entityidrow">
-                        <label for="entityId" class="">Entity Id</label>
+                      <div class="form-group row entityidrow" style="width:500px;">
+                        <label for="entityId" class="">Entity ID</label>
                         <input type="number" class="form-control" id="entityIdUploadPage" name="description" value=""
-                          title="Enter Description" placeholder="Entity Id" required="" pattern="[0-9]">
+                          title="Enter Description" placeholder="Entity ID" required="" pattern="[0-9]" >
                       </div>
-                      <div class="form-group row">
+                      <div class="form-group row" style="width:500px;">
                         <label for="operatorId" class="col-form-label">Operator</label>
                         <select class="form-control custom-select" name="senderId" id="operatorId"
                           aria-label="Sender Id" aria-describedby="mobile-addon">
@@ -294,12 +295,13 @@
                           <option value="JIO">JIO</option>
                           <option value="AIRTEL">AIRTEL</option>
                           <option value="BSNL">BSNL</option>
-			  <option value="VIDEOCON">Videocon</option>
+                          <option value="VIDEOCON">Videocon</option>
                           <option value="ALL">ALL</option>
                         </select>
+                        <a href="#" id="sampleFileLink" style="display: none;">Sample File</a>
                       </div>
                       <div class="form-group row mt-4">
-                        <button type="submit" id="" class="btn btn-primary">Upload Content Template</button>&nbsp;&nbsp;
+                        <button type="submit" id="" class="btn btn-primary">Upload</button>&nbsp;&nbsp;
                         <button type="reset" id="cancelForm" class="btn btn-danger">Cancel</button>
                       </div>
                     </form>
@@ -372,7 +374,7 @@
             <td><span id="statusTxt"></span></td>
           </tr>
           <tr>
-            <td><b>Operator Template Id</b></td>
+            <td><b>Operator Template ID</b></td>
             <td><span id="operatorTemplateIdTxt"></span></td>
           </tr>
           <tr>

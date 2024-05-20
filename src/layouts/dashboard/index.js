@@ -14,16 +14,28 @@ if (!User.isLoggedIn()) {
   window.location.href = "/login";
 }
 
+// // closed.bs.alert remove only div with class blur
+// $(".alert").on("closed.bs.alert", function () {
+//   var cnt = $(".blur").contents();
+//   $(".blur").replaceWith(cnt);
+//   // $("div").removeClass("blur");
+// } );
+
 const renderStats = (data) => {
   const getHeading = (key) => {
     let result = key.replace(/([A-Z])/g, " $1");
     return result.charAt(0).toUpperCase() + result.slice(1);
+  
   }
   let statsData = [];
 
   const grid = data.data;
   for (let key in data) {
+    if(data[key] == null){
+      $("#" + key).html(0);
+    }else{
     $("#" + key).html(data[key]);
+      }
   }
 }
 
@@ -68,9 +80,10 @@ const renderHourlyGraph = (data) => {
 
   var options = {
     chart: {
-      height: 350,
+      height: 310,
       type: 'area',
     },
+    colors: ['#6F5CFF', '#53B574'],
     dataLabels: {
       enabled: false
     },
@@ -78,12 +91,12 @@ const renderHourlyGraph = (data) => {
       curve: 'smooth'
     },
     series: [{
-      name: 'Total Delivered',
-      data: totalDelivered
-    }, {
       name: 'Total Submit',
       data: totalSubmit
-    }],
+    },{
+      name: 'Total Delivered',
+      data: totalDelivered
+    },],
 
     xaxis: {
       type: 'datetime',
@@ -104,6 +117,65 @@ const renderHourlyGraph = (data) => {
   chart.render();
 
 }
+
+
+// pie chart start
+
+const renderPieChart = (data) => {
+  let dval = data.grid[0];
+  console.log(dval.totalAwaited);
+  var options = {
+  
+  
+    series: [parseInt(dval.totalRequest),parseInt(dval.totalRejected),parseInt(dval.totalSubmit),parseInt(dval.totalDelivered),parseInt(dval.totalFailed),parseInt(dval.totalAwaited)],
+    labels:['Request','Rejected','Submit','Delivered','Failed','Awaited'],
+    chart: {
+   // width: 380, h-250
+    height:350,
+    type: 'donut',
+  },
+  colors: ['#d420aa', '#FF7016', '#6F5CFF', '#49cc75', '#FF0000', '#f7f434'],
+  plotOptions: {
+    pie: {
+      startAngle: -90,
+      endAngle: 270
+    }
+  },
+  dataLabels: {
+    enabled: false
+   
+  },
+  fill: {
+    type: 'gradient'
+  },
+  legend: {
+    formatter: function(val, opts) {
+      return val + " - " + opts.w.globals.series[opts.seriesIndex]
+    }
+  },
+  title: {
+    // text: 'Gradient Donut with custom Start-angle'
+  },
+  responsive: [{
+    breakpoint: 480,
+    options: {
+      chart: {
+        width: 200
+      },
+      legend: {
+        position: 'bottom'
+      }
+    }
+  }]
+  }
+  var chart = new ApexCharts(document.querySelector("#summaryReport"), options);
+  chart.render();
+  }
+
+// pie chart end
+
+
+
 
 const renderSummaryReportGraph = (data) => {
   const getHeading = (key) => {
@@ -126,6 +198,16 @@ const renderSummaryReportGraph = (data) => {
     }
 }
   }
+  
+  console.log(data.grid[0]);
+
+
+}
+
+
+
+
+
 /*
 var options = {
   chart: {
@@ -139,42 +221,51 @@ var options = {
   labels: formattedTableHeader
 }
 */
-var colors = ['#008FFB','#FEB019','#775DD0','#00E396','#ff0000','#AFAF0A'];
-        var options = {
-            chart: {
-                height: 350,
-                type: 'bar',
-            },
-            colors: colors,
-            plotOptions: {
-                bar: {
-                    columnWidth: '45%',
-                    distributed: true
-                }
-            },
-            dataLabels: {
-                enabled: false,
-            },
-            series: [{
-                data: tableData
-            }],
-            xaxis: {
-                categories: formattedTableHeader,
-                labels: {
-                    style: {
-                        colors: colors
-                    }
-                }
-            }
-        }
-var chart = new ApexCharts(
-  document.querySelector("#summaryReport"),
-  options
-);
 
-chart.render();
 
-}
+
+
+
+
+// var colors = ['#008FFB','#FEB019','#775DD0','#00E396','#ff0000','#AFAF0A'];
+//         var options = {
+//             chart: {
+//                 height: 350,
+//                 type: 'bar',
+//             },
+//             colors: colors,
+//             plotOptions: {
+//                 bar: {
+//                     columnWidth: '45%',
+//                     distributed: true
+//                 }
+//             },
+//             dataLabels: {
+//                 enabled: false,
+//             },
+//             series: [{
+//                 data: tableData
+//             }],
+//             xaxis: {
+//                 categories: formattedTableHeader,
+//                 labels: {
+//                     style: {
+//                         colors: colors
+//                     }
+//                 }
+//             }
+//         }
+// var chart = new ApexCharts(
+//   document.querySelector("#summaryReport"),
+//   options
+// );
+
+// chart.render();
+
+// }
+
+
+
 
 function kFormatter(num) {
   return Math.abs(num) > 999 ? Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1)) + 'k' : Math.sign(num) * Math.abs(num)
@@ -192,7 +283,7 @@ Request(Endpoints.get("dashboard"), "POST", {
 Request(Endpoints.get("getHourlyReport"), "POST", {
   loggedInUserName: User.getName()
 }).done(data => {
-  //console.log(data);
+  console.log(data);
   if (Endpoints.validateResponse(data)) {
     const dashboardData = data.data || {};
     renderHourlyGraph(dashboardData);
@@ -213,8 +304,10 @@ Request(Endpoints.get("summaryReport"), "POST", {
   fromDate: todayDate,
   toDate: todayDate
 }).done(data => {
+  console.log(data);
   if (Endpoints.validateResponse(data)) {
     const dashboardData = data.data || {};
     renderSummaryReportGraph(dashboardData);
+    renderPieChart(dashboardData);
   }
 });

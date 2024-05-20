@@ -1,0 +1,5 @@
+
+> genesis-mis@1.0.0 start /home/apps/applications/gui-server/ysa-mis
+> NODE_ENV=production node ./src/server.js
+
+Genesis listening at http://:::8080

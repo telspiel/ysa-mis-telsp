@@ -50,7 +50,8 @@
                   <div class="form-group">
                     <label for="txt-from">Sender ID</label>
                     <input type="text" class="form-control" id="senderid" placeholder="Sender Id"
-                      aria-label="Sender Id" pattern="^[a-zA-Z]{6}|[0-9]{6}$"maxlength="6" >
+                      {{!-- aria-label="Sender Id" pattern="^[a-zA-Z]{6}|[0-9]{6}$" maxlength="6" > --}}
+                      aria-label="Sender Id" minlength="3" maxlength="14" >
                   </div>
                 </div>
                 <div class="col-md-4">
@@ -68,7 +69,7 @@
                   </div>
                 </div>
                 <div class="col-md-2 form-group mt-4 pt-2">
-                  <button class="btn btn-info d-none" id="donwloadFileButton" ></button>
+                  <button class="btn btn-info d-none" id="donwloadFileButton"></button>
                 </div>
               </div>
               <input type="hidden" id="pageNumber" value="1" />

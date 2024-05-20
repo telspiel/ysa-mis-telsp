@@ -32,6 +32,10 @@ $(function () {
           if (data.otpRequired) {
             $(".otp-wrapper").removeClass('d-none');
             $(".user-verify-btn").addClass('d-none');
+            $(".form-group").addClass('d-none');
+            $(".toggle-password").addClass('d-none');
+            $(".fxt-checkbox-area").addClass('d-none');
+
           } else {
             proceedWithLoggedinuser(data, params);
           }
@@ -59,6 +63,9 @@ $(".otp-submit").on('click', function (e) {
       } else {
         alert("Invalid OTP");
       }
+     } else {
+
+      $('.otp-number-input').val('');
 
     }
   });
@@ -204,5 +211,3 @@ $(document).ready(function () {
 });
 
 /* Code Ends here */
-
-

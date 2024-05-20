@@ -210,7 +210,7 @@ function getDownloadableFile() {
         a.href = window.URL.createObjectURL(xhttp.response);
         // Give filename you wish to download
         const dTime = moment(new Date()).format("DDMMYYYY-HHmm");
-        a.download = User.getName() + "-" + dTime + "-detailReport.csv";
+        a.download = User.getName() + "-" + dTime + "-ClickerReport.csv";
         a.style.display = 'none';
         document.body.appendChild(a);
         a.click();

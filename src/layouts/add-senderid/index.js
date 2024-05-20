@@ -41,6 +41,62 @@ function fetchEntityID(type) {
   });
 }
 
+// if radio button of id msgType-2 is checked then change input type of addSenderID from number to text with maxlength of 6 and remove oninput attribute
+
+
+// $("#msgType-2").click(function () {
+//     // log the size of the input field as the user types
+//     var input = document.getElementById("addSenderID");
+//     input.setAttribute("type", "text");
+//     input.setAttribute("maxlength", "6");
+//     input.removeAttribute("oninput");
+// });
+
+$( document ).ready(function() {
+
+$("#msgType-2").click(function () {
+  if($("#msgType-2").is(":checked")){
+  console.log("clicked");
+
+  let input = document.getElementById("addSenderID");
+
+  input.removeAttribute("oninput");
+  input.removeAttribute("type");
+
+
+  input.setAttribute("type", "text");
+  // input.setAttribute("onkeydown", "return /[0-9]/.test(event.key)")
+  input.setAttribute("onkeydown", "return /[a-zA-Z0-9]/.test(event.key)") //user can now enter both text and numbers (text-numeric)
+
+  console.log(input.getAttribute("type"));
+  console.log(input.getAttribute("pattern"));
+
+}})
+});
+
+$(document).ready(function () {
+  $("#msgType-1").click(function () {
+    if ($("#msgType-1").is(":checked")) {
+      let input = document.getElementById("addSenderID");
+      input.removeAttribute("onkeydown");
+      input.removeAttribute("type");
+      input.setAttribute("type", "number");
+      input.setAttribute("oninput", "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);");
+      console.log(input.getAttribute("type"));
+    }});
+});
+
+
+
+// $("#msgType-2").click(function () {
+//   $("#addSenderID").attr("type", "text");
+//   $("#addSenderID").attr("pattern", "[a-zA-Z'-'\s]*");
+//   $("#addSenderID").attr("maxlength", "6");
+// });
+
+
+
+
 const renderDetailedMis = (data) => {
   console.log(data);
   if (!Endpoints.validateResponse(data)) {
@@ -81,7 +137,7 @@ var dtable =  $('#misTable').DataTable({
     "columns": [
     { title: "SR no" },
      // { title: "Id" },
-     { title: "SenderId" },
+     { title: "Sender Id" },
      { title: "Active" },
      { title: "Default" },
      { title: "Entity Id" },
@@ -165,12 +221,18 @@ $(() => {
 Alert.clearAll();
     //var rege = /^[0-9a-zA-Z]{6,6}$/;
       var  senderIdType=  $("input[name=msgType]:checked").val();
-    var rege = /^(?=.*[a-zA-Z0-9])(?!^\d+$)[a-ziA-Z0-9]{6,6}$/;
-    var numRegx = /^[0-9]{6,6}$/;
+    var rege = /^(?=.*[a-zA-Z0-9])(?!^\d+$)[a-ziA-Z0-9]{3,14}$/;
+    var numRegx = /^[0-9]{3,14}$/;
+    if (senderId.length < 3) { // Check if senderId length is less than 3
+      Alert.error("Sender ID must contain at least 3 characters.", {
+          clearTime: 10 * 1000
+      });
+      return;
+  }
     if (senderIdType=="others") {
   if ((rege.test(senderId)) || numRegx.test(this[0].value)) {
   } else {
-      Alert.error("Sender ID must contain 6 alpha numeric characters, special characters are not allowed", {
+      Alert.error("Sender ID must contain Min-Max(3-14) characters, special characters and only numeric sender id are not allowed", {
         clearTime: 10 * 10 * 1000
           })
     return;
@@ -186,7 +248,7 @@ Alert.error("Sender ID must contain 6  numeric characters, special characters ar
 return;
 }
 }
-var userid =User.getUserId();
+let userid =User.getUserId();
 console.log($("input[name=msgType]:checked").val());
     const data = {
       loggedInUserName: User.getName(),
@@ -241,6 +303,94 @@ console.log($("input[name=msgType]:checked").val());
   });
 });
 
+$("#selectFile").change(function () {
+  $("#fileName").text(this.files[0].name);
+});
+
+console.log(User.getUserId());
+$("#btnSubmit").click(function (e) {
+
+  console.log($("input[name=msgType2]:checked").val());
+  console.log($("#headerid2").val());
+  console.log($("#addentityid2").val());
+
+  const file = $("#selectFile").get(0).files[0];
+  // let userid = User.getUserId();
+  // console.log(userid);
+
+  if (!file) {
+    Alert.info("Please select a file.");
+    return;
+  }
+
+  // let ukn = $('#upload-kennalName').val();
+  // if (ukn == 0) {
+  //   Alert.info("Please select a Kennal.");
+  //   return;
+  // }
+
+  // if(!$('input[name="upload-retry"]').is(':checked')){
+  //   Alert.info("Please select the option.");
+  //   return;
+  // }
+
+  // if(!$('input[name="upload-cretry"]').is(':checked')){
+  //   Alert.info("Please select the option.");
+  //   return;
+  // }
+
+  // let peci = $('#upload-platformErrorCodeId').val();
+  // if (peci == "") {
+  //   Alert.info("Please select Platform Error Code Id.");
+  //   return;
+  // }
+
+
+  const formData = new FormData();
+  formData.append("loggedInUserName", User.getName());
+  formData.append("operation", "addBulkSenderId");
+  formData.append("userId", 2); // null check
+  formData.append("senderIdType", $("input[name=msgType2]:checked").val());
+  formData.append("senderIdSubType", null); // remove
+  formData.append("status","active"); // remove
+  formData.append("defaultSenderId", "ret"); // remove check
+  formData.append("file", file);
+  // formData.append("fileType", "xlsx");
+  formData.append("headerId", $("#headerid2").val());
+  formData.append("entityId", $("#addentityid2").val());
+  // formData.append("isCarrierRetryEnabled", $('input[name="upload-cretry"]:checked').val());
+  // formData.append("platformErrorCodeId", $("#upload-platformErrorCodeId").val());
+  // formData.append("kannelId", $("#upload-kennalName").val());
+
+
+  Request(Endpoints.get("addBulkSenderId"), "POST", formData, {
+    showMainLoader: true,
+    contentType: false,
+    processData: false,
+    data: formData
+  }).done(data => {
+    console.log(data);
+    if (Endpoints.validateResponse(data)) {
+
+      data.message &&
+        (data.code === 200
+          ? Alert.success(data.message, {
+            clearTime: 10 * 1000
+          })
+          : Alert.error(data.message, {
+            clearTime: 10 * 1000
+          }));
+          $("#controls-form2")[0].reset();
+          $("#selectFile").val('');
+          $("#fileName").text('Choose file');
+    }
+  });
+
+
+
+
+
+});
 //updateTable();
 
 function updateTable() {

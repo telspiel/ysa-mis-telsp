@@ -15,11 +15,11 @@
             <nav>
               <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <a class="nav-item nav-link active show" id="add-gblacklist-tab" data-toggle="tab" href="#add"
-                  role="tab" aria-controls="add" aria-selected="false">Add Blacklist Number</a>
+                  role="tab" aria-controls="add" aria-selected="false"><b>Add</b></a>
                 <a class="nav-item nav-link" id="upload-gblacklist-tab" data-toggle="tab" href="#upload" role="tab"
-                  aria-controls="view" aria-selected="false">Upload Number</a>
+                  aria-controls="view" aria-selected="false"><b>Upload</b></a>
                 <a class="nav-item nav-link" id="view-gblacklist-tab" data-toggle="tab" href="#view" role="tab"
-                  aria-controls="view" aria-selected="false">View / Delete Blacklist Number</a>
+                  aria-controls="view" aria-selected="false"><b>View / Delete</b></a>
                 <a class="nav-item nav-link d-none" id="remove-gblacklist-tab" data-toggle="tab" href="#remove"
                   role="tab" aria-controls="view" aria-selected="true">Remove
                   Number</a>
@@ -32,23 +32,23 @@
                 <div class="col-md-6 py-4 m-auto">
 
                   <h4>Add Blacklist Number</h4>
-                  <div id="add-gblacklist-form" class="gblacklist-form col-md-12 mt-4">
+                  <div id="add-gblacklist-form" class="gblacklist-form col-md-6 mt-4">
                     <form id="add-gblacklist" action="#" method="post" autocomplete="off">
                       <div class="form-group row">
                         <label for="mobileNumber">Mobile
                           Number</label>
                         <input type="text" class="form-control" id="mobileNumber" name="mobileNumber" value=""
                           title="Enter Mobile Number." placeholder="Mobile Number" required="" autocomplete="off"
-                          pattern="^[0-9]{12}$" title="Enter 10 digit mobile number with 91.">
+                          pattern="^[0-9]{12}$" title="Enter 10 digit mobile number with 91." style="width:80%;">
                         <div class="txt-center">Please add the number with 91</div>
                       </div>
                       <div class="form-group row">
                         <label for="description">Description</label>
                         <input type="text" class="form-control" id="description" name="description" value=""
-                          title="Enter Description" placeholder="Description" required="">
+                          title="Enter Description" placeholder="Description" required=""  style="width:84%;">
                       </div>
                       <div class="form-group row mt-4">
-                        <button type="submit" id="" class="btn btn-primary">Add Blacklist Number</button>
+                        <button type="submit" id="" class="btn btn-primary" style='margin-right:16px'>Add</button>
                         <button type="reset" id="cancelForm" class="btn btn-danger">Cancel</button>
                       </div>
                     </form>
@@ -60,7 +60,7 @@
 
                   <div id="upload-gblacklist-form" class="gblacklist-form">
                     <h4>Upload Blacklist Number</h4>
-                    <div id="upload-gblacklist-form" class="gblacklist-form col-md-12 mt-4">
+                    <div id="upload-gblacklist-form" class="gblacklist-form col-md-6 mt-4">
                       <form id="upload-gblacklist" action="#" method="post" autocomplete="off">
                         <div class="form-group row">
                           <label for="orgName" class="">File <small>(<b>Format</b> :  99845.....)</small></label>
@@ -77,7 +77,7 @@
                             title="Enter Description" placeholder="Description" required="">
                         </div>
                         <div class="form-group row mt-4">
-                          <button type="submit" id="" class="btn btn-primary">Upload Blacklist Number</button>
+                          <button type="submit" id="" class="btn btn-primary" style='margin-right:16px'>Upload</button>
                           <button type="reset" id="cancelForm" class="btn btn-danger">Cancel</button>
                         </div>
                       </form>
@@ -88,7 +88,7 @@
               <div class="tab-pane fade" id="view" role="tabpanel" aria-labelledby="nav-home-tab">
                 <div class="col-md-6 py-4 m-auto">
                   {{!-- <div class="col-md-6"> --}}
-                  <h4>View Blacklist Number</h4>
+                  <h4 style="padding-bottom:18px">View Blacklist Number</h4>
                   <div class="frm-border">
                     <form id="search-blacklist-form">
                       <div class="row">

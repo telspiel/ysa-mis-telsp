@@ -448,15 +448,15 @@ a:not([href]):not([tabindex]):focus {
 }
 
 .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu:after {
-    background: rgba(113, 138, 162, 0.5);
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li:after {
-    background: rgba(113, 138, 162, 0.5);
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li.active > a:before, .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li.pcoded-trigger > a:before, .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li:hover > a:before {
-    background: #4099ff;
+    background: #fff;
 }
 
 .pcoded-navbar.menu-light .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li + li > a {

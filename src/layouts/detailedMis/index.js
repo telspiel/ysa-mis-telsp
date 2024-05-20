@@ -7,12 +7,20 @@ import Endpoints from "./../../../config/endpoints";
 import Alert from "./../../scripts/alert";
 import Cookie from "./../../scripts/cookie";
 
+// $("#donwloadFileButton").addClass("d-none");
+
 const table = require("./../../partials/table.hbs");
 
-console.log("Welcome to detailed mis!");
+console.log("Welcome to detailed mis page!");
+
+
+// $( document ).ready(function() {
+//   // $("#donwloadFileButton").addClass("d-none");
+//   alert('ok');
+// });
 
 if (!User.isLoggedIn()) {
-  window.location.href = "/login";
+  window.location.href = "/login";a
 }
 
 $("#fromDate,#toDate").datetimepicker({
@@ -74,7 +82,11 @@ const renderDetailedMis = (data) => {
       { title: "Error Code" },
       { title: "Delivery Date Time" },
       { title: "Message Text" },
-      { title: "Message Type" }
+      { title: "Message Type" },
+      { title: "Error Description" },
+      { title: "Circle" },
+      { title: "Carrier" },
+      { title: "Template Id" }
     ],
     "order": [[0, "desc"]],
 
@@ -140,9 +152,16 @@ const renderDetailedMis = (data) => {
   }
 }
 
+  $("#donwloadFileButton").addClass("d-none");
+// document.addEventListener('DOMContentLoaded', function() {
+  //hide the download button when page loads initially
+  // $("#donwloadFileButton").hide();
+
 const now = moment(new Date()).format("YYYY-MM-DD");
 
 $(() => {
+  // $("#donwloadFileButton").addClass("d-none");
+
   $("#controls-form").submit(function (e) {
     e.preventDefault();
     var mobileNumber = $("#mobileNumber").val();
@@ -182,8 +201,12 @@ $(() => {
     // if (data.mobileNumber !== "") {
     //   data.pageNumber = 1;
     // }
-
-    //console.log(data);
+    
+  //   $(document).ready(function() {
+  //     $("#downloadFileButton").hide();
+  // });
+  
+    console.log(data);
     Request(Endpoints.get("detailedMis"), "POST", data, {
       showMainLoader: true
     }).done(data1 => {
@@ -191,14 +214,19 @@ $(() => {
       $("#pageNumber").val(1);
       var donwloadlink = data1.data.downloadReportLink;
       if (donwloadlink != null) {
+        if (data.mobileNumber || data.messageId)  { 
         $("#donwloadFileButton").html(donwloadlink);
         $("#donwloadFileButton").removeClass("d-none");
 
         getDownloadableFile();
 
-      } else {
+      } 
+      else {
         $("#donwloadFileButton").addClass("d-none");
       }
+    } else {
+      $("#donwloadFileButton").addClass("d-none");
+    }
     });
   });
   $("#pageNext").click(() => {
@@ -302,6 +330,10 @@ function detailMisReport() {
     }
   });
 }
+
+
+// });
+
 
 function getDownloadableFile() {
   $('#donwloadFileButton').on('click', 'a', function (e) {

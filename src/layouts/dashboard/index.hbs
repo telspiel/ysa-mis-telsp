@@ -1,4 +1,5 @@
 
+
     {{> sideNav }}
 
 <div class="pcoded-main-container " style="background-color:#f6f7fb;">
@@ -7,9 +8,9 @@
         <div class="row contant-holder-dash">
             <!-- order-card start -->
             <div class="col-md-4 dash-tab">
-                <div class="card bg-c-blue order-card">
+                    <div class="card bg-c-primary-light order-card">
                     <div class="card-body">
-                        <h6 class="text-white">SMS Count Today</h6>
+                        <h6 class="text-white">Today's SMS Count</h6>
                         <h2 class="text-right text-white">
                           <i class="feather clock icon-clock float-left"></i>
                           <span class="counter-Data" id="totalSmsToday">0</span>
@@ -30,11 +31,11 @@
                 </div>
             </div>
             <div class="col-md-4 dash-tab">
-                <div class="card bg-c-yellow order-card">
+                <div class="card bg-c-primary order-card">
                     <div class="card-body">
-                        <h6 class="text-white">SMS Count Current Month</h6>
+                        <h6 class="text-white">Current Month SMS Count</h6>
                         <h2 class="text-right text-white">
-                          <i class="feather check-square icon-check-square float-left"></i>
+                          <i class="feather calendar icon-calendar float-left"></i>
                           <span id="totalSmsMonth">0</span>
                           </h2>
                         {{!-- <p class="m-b-0">Previous 2 Months Report<span class="float-right"></span></p> --}}
@@ -56,11 +57,11 @@
             <!-- order-card end -->
             <!-- order-card start -->
             <div class="col-md-4 dash-tab">
-                <div class="card bg-c-green order-card">
+                <div class="card bg-c-secondary order-card">
                     <div class="card-body">
-                        <h6 class="text-white">Available Credits</h6>
+                        <h6 class="text-white">Available Credit</h6>
                         <h2 class="text-right text-white">
-                          <i class="feather check-circle icon-check-circle float-left"></i>
+                          <i class="feather credit-card icon-credit-card float-left"></i>
                           <span id="availableCredits">0</span>
                           </h2>
                         {{!-- <p class="m-b-0">Previous Quartly Report<span class="float-right"></span></p> --}}
@@ -73,7 +74,7 @@
             <div class="col-md-12 col-xl-6">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Today Summary Report</h5>
+                        <h5>Today's Summary Report</h5>
                     </div>
                     <div class="card-body">
                         {{!-- <div id="area-chart-1"></div> --}}
@@ -128,3 +129,4 @@
         </span>
     </div>
 </div>
+   

@@ -2,7 +2,7 @@ class Endpoints {
   constructor() {
     // this.serverAddress = "http://142.93.215.255:2081/gui-services";
     //  this.serverAddress = "https://backend3.telsp.in/gui-services";
-    this.serverAddress = "https://backend3.mra-smsc.in/gui-services";
+    this.serverAddress = "https://backend3.quicksmart.in/gui-services";
     //this.serverAddress = "https://uatbackend3.gmstool.com/gui-services";
     this.endpoints = {
       login: "user/login",
@@ -24,6 +24,7 @@ class Endpoints {
       detailedAnalysis: "/reportService/detailedAnalytics",
       clickerAnalysis: "/reportService/clickerAnalytics",
       addSenderId: "/senderIdService/addSenderId",
+      addBulkSenderId:"/senderIdService/addBulkSenderId1",
       deleteSenderId: "/senderIdService/deleteSenderId",
       getActiveSenderIdList: "/senderIdService/viewSenderIdList",
       saveTemplate: "/contentTemplateService/saveContentTemplate",

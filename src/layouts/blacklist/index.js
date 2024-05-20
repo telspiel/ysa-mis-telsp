@@ -62,6 +62,9 @@ $("#add-gblacklist").submit(function (e) {
     operation: "addUserBlacklistNumber"
   };
 
+  // show alert that request is under process
+  Alert.success("We are processing your request. Kindly check in sometime.");
+
   console.log(formData);
   Request(
     Endpoints.get("addNumberInUserBlackList"),
@@ -256,6 +259,8 @@ function deleteSelected(dtable) {
     operation: "removeUserBlackListNumber",
     numberToBeRemoved: rowIdMap
   };
+
+  Alert.success("We are processing your request. Kindly check in sometime.");
   Request(Endpoints.get("removeNumberFromUserBlackList"), "POST", formData).done(resData => {
     if (Endpoints.validateResponse(resData)) {
       console.log(resData.message);

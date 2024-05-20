@@ -3,14 +3,18 @@
   <div class="navbar-wrapper  ">
     <div class="navbar-content scroll-div ">
       <ul class="nav pcoded-inner-navbar ">
+
+
+        {{!-- <li class="nav-item">
+          <a href="/dashboard" class="nav-link "><span class="pcoded-micon"><i
+                class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+        </li> --}}
         <li class="nav-item {{#if dashboard}}active{{/if}}">
           <a href="/dashboard" class="nav-link "><span class="pcoded-micon"><i
                 class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
-        </li>
+           </li>  
 
-        
-
-
+         
 
         <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="fa fa-flag"></i></span><span
@@ -23,18 +27,16 @@
                         </li>
                         <li class="nav-item">
                             <a href="/template-mgmt" class="nav-link "><span class="pcoded-micon"><i
-                                        class="fa fa-file"></i></span><span class="pcoded-mtext">Content Template
-                                    ID</span></a>
+                                        class="fa fa-plus-square"></i></span><span class="pcoded-mtext">Content Template
+                                    </span></a>
                         </li>
                     </ul>
           </li>
 
           
 
-
-
           <li class="nav-item pcoded-hasmenu">
-                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="fa fa-file"></i></span><span
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span
                             class="pcoded-mtext">Report Management</span></a>
                     <ul class="pcoded-submenu">
                         <li><a href="/summaryReport">Summary Report</a></li>
@@ -45,36 +47,16 @@
                 </li>
 
 
-
            <li class="nav-item {{#if downloadReport}}active{{/if}}">
           <a href="/downloadReport" class="nav-link "><span class="pcoded-micon"><i
-                class="feather icon-box"></i></span><span class="pcoded-mtext">Download Zone</span></a>
+                class="feather icon-download"></i></span><span class="pcoded-mtext">Download Lounge</span></a>
            </li>     
              
 
            <li class="nav-item">
-          <a href="/blacklist" class="nav-link "><span class="pcoded-micon"><i class="fa fa-crosshairs"></i></span><span
+              <a href="/blacklist" class="nav-link "><span class="pcoded-micon"><i class="feather icon-x-square"></i></span><span
               class="pcoded-mtext">OptOut</span></a>
-        </li>   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          </li>   
 
 
         {{!-- <li class="nav-item {{#if detailedMis}}active{{/if}}">
@@ -115,7 +97,7 @@
               Credit History
             </span></a>
         </li>
-        <li class="nav-item d-none" id="campaignReportMenu">
+        <li class="nav-item" id="campaignReportMenu">
           <a href="/campaign-report" class="nav-link "><span class="pcoded-micon"><i
                 class="fa fa-arrow-circle-o-down"></i></span><span class="pcoded-mtext">Campaign Report</span></a>
         </li>

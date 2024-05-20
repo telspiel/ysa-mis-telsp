@@ -67,7 +67,7 @@ const renderDetailedMis = (data) => {
     bPaginate: false,
     searching: false,
     paging: false,
-    ordering: false,
+    ordering: true,
     info: false,
     order: [[0, "desc"]],
     "columns": [

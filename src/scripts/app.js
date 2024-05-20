@@ -12,11 +12,14 @@ if (typeof window === "object") {
   app.requests = [];
 }
 
-if (User.getUserPrivilage() == "SHOW_CREDIT_HISTORY") {
-  $("#creditHistoryMenu").removeClass("d-none");
-}
-if (User.getUserPrivilage() == "SHOW_CAMPAIGN_REPORT") {
-  $("#campaignReportMenu").removeClass("d-none");
+if(User.getUserPrivilage() != null) {
+  let privilageArray = User.getUserPrivilage().split(",");
+  if (privilageArray.includes("SHOW_CREDIT_HISTORY") && privilageArray.includes("SHOW_CAMPAIGN_REPORT")) {
+    $("#creditHistoryMenu").removeClass("d-none");
+  }
+  if (privilageArray.includes("SHOW_CREDIT_HISTORY")) {
+    $("#creditHistoryMenu").removeClass("d-none");
+  }
 }
 $(() => {
   if (User.isLoggedIn()) {

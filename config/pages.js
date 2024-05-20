@@ -358,7 +358,8 @@ class PageConfig {
           title: "Add Sender ID",
           scripts: [
             "js/vendor-all.min.js",
-            "js/plugins/bootstrap.min.js",
+            // "js/plugins/bootstrap.min.js",
+            "js/bootstrap.min.js",
             "js/pcoded.min.js",
             "js/common.js",
             "js/moment.js",

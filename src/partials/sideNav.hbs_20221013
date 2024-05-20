@@ -1,0 +1,140 @@
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar menupos-fixed menu-light ">
+  <div class="navbar-wrapper  ">
+    <div class="navbar-content scroll-div ">
+      <ul class="nav pcoded-inner-navbar ">
+
+
+        {{!-- <li class="nav-item">
+          <a href="/dashboard" class="nav-link "><span class="pcoded-micon"><i
+                class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+        </li> --}}
+        <li class="nav-item {{#if dashboard}}active{{/if}}">
+          <a href="/dashboard" class="nav-link "><span class="pcoded-micon"><i
+                class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+           </li>  
+
+         
+        
+
+
+
+        <li class="nav-item pcoded-hasmenu">
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="fa fa-flag"></i></span><span
+                            class="pcoded-mtext">DLT Management</span></a>
+                    <ul class="pcoded-submenu">
+                        <li class="nav-item">
+                            <a href="/add-senderid" class="nav-link "><span class="pcoded-micon"><i
+                                        class="fa fa-plus-square"></i></span><span class="pcoded-mtext">Sender/ Header
+                                    ID</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/template-mgmt" class="nav-link "><span class="pcoded-micon"><i
+                                        class="fa fa-file"></i></span><span class="pcoded-mtext">Content Template
+                                    ID</span></a>
+                        </li>
+                    </ul>
+          </li>
+
+          
+
+
+
+          <li class="nav-item pcoded-hasmenu">
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="fa fa-file"></i></span><span
+                            class="pcoded-mtext">Report Management</span></a>
+                    <ul class="pcoded-submenu">
+                        <li><a href="/summaryReport">Summary Report</a></li>
+                        <li><a href="/senderidReport">Sender ID Wise Report</a></li>
+                        <li><a href="/detailedMis">Detailed Report</a></li>
+                        <li><a href="/detailed-analysis">Clicker Report</a></li>                     
+                    </ul>
+                </li>
+
+
+
+           <li class="nav-item {{#if downloadReport}}active{{/if}}">
+          <a href="/downloadReport" class="nav-link "><span class="pcoded-micon"><i
+                class="feather icon-box"></i></span><span class="pcoded-mtext">Download Lounge</span></a>
+           </li>     
+             
+
+           <li class="nav-item">
+          <a href="/blacklist" class="nav-link "><span class="pcoded-micon"><i class="fa fa-crosshairs"></i></span><span
+              class="pcoded-mtext">OptOut</span></a>
+        </li>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {{!-- <li class="nav-item {{#if detailedMis}}active{{/if}}">
+          <a href="/detailedMis" class="nav-link "><span class="pcoded-micon"><i
+                class="feather icon-file-text"></i></span><span class="pcoded-mtext">Detailed Report</span></a>
+        </li>
+
+        <li class="nav-item {{#if summaryReport}}active{{/if}}">
+          <a href="/summaryReport" class="nav-link "><span class="pcoded-micon"><i
+                class="feather icon-align-justify"></i></span><span class="pcoded-mtext">Summary Report</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="/add-senderid" class="nav-link "><span class="pcoded-micon"><i
+                class="fa fa-plus-square"></i></span><span class="pcoded-mtext">Add/View Sender
+              ID</span></a>
+        </li>
+        <li class="nav-item {{#if senderidReport}}active{{/if}}">
+          <a href="/senderidReport" class="nav-link "><span class="pcoded-micon"><i
+                class="fa fa-flag-o"></i></span><span class="pcoded-mtext">Sender ID Report</span></a>
+        </li>
+
+        <li class="nav-item {{#if downloadReport}}active{{/if}}">
+          <a href="/downloadReport" class="nav-link "><span class="pcoded-micon"><i
+                class="feather icon-box"></i></span><span class="pcoded-mtext">Download Report</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="/blacklist" class="nav-link "><span class="pcoded-micon"><i class="fa fa-crosshairs"></i></span><span
+              class="pcoded-mtext">Blacklist</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="/template-mgmt" class="nav-link "><span class="pcoded-micon"><i class="fa fa-file"></i></span><span
+              class="pcoded-mtext">Content Template
+              Management</span></a>
+        </li> --}}
+        <li class="nav-item d-none" id="creditHistoryMenu">
+          <a href="/creditHistory" class="nav-link "><span class="pcoded-micon"><i
+                class="fa fa-dollar mr-1"></i></span><span class="pcoded-mtext">
+              Credit History
+            </span></a>
+        </li>
+        <li class="nav-item d-none" id="campaignReportMenu">
+          <a href="/campaign-report" class="nav-link "><span class="pcoded-micon"><i
+                class="fa fa-arrow-circle-o-down"></i></span><span class="pcoded-mtext">Campaign Report</span></a>
+        </li>
+
+        {{!-- <li class="nav-item">
+          <a href="/detailed-analysis" class="nav-link "><span class="pcoded-micon"><i
+                class="fa fa-book"></i></span><span class="pcoded-mtext">Clicker Report</span></a>
+        </li> --}}
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<!-- [ navigation menu ] end -->

@@ -20,6 +20,28 @@ $(document).ready(function () {
     $("#templateText").val($("#templateText").val() + " {#var#} ");
   });
 
+  $('#operatorId').on('change', function () {
+    var selectedOperator = $(this).val();
+    
+    // Map operator values to corresponding file URLs
+    var fileMap = {
+        'VIL': 'voda_format_new.csv',
+        'JIO': 'JIO_new_format.xlsx',
+        'AIRTEL': 'airtel_file.csv',
+        'VIDEOCON': 'Videcon_new_format.xlsx',
+        'ALL': 'Videcon_new_format.xlsx'
+    };
+    
+    if (selectedOperator in fileMap) {
+        var fileUrl = fileMap[selectedOperator];
+        $('#sampleFileLink').attr('href', fileUrl).show();
+    } else {
+        $('#sampleFileLink').hide();
+        // Handle if no file is available for the selected operator
+        alert("No reference file available for the selected operator.");
+    }
+});
+
 });
 
 $("#senderId").change(function () {
@@ -353,8 +375,8 @@ $("#upload-content-template-form").submit(function (e) {
     Alert.error("File Type Mismatch");
     return;
   }
-    if ((["csv", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.ms-excel"].indexOf(selectFile.type) == -1)) {
-    Alert.error("Only  csv,xlsx,xls files are allowed.");
+    if ((["csv", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.ms-excel","text/csv"].indexOf(selectFile.type) == -1)) {
+    Alert.error("Only csv,xlsx,xls files are allowed.");
       return;
     }
 

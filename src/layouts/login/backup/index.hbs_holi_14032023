@@ -1,0 +1,63 @@
+{{!-- <section class="fxt-template-animation fxt-template-layout22" data-bg-image="images/banner.jpg"> --}}
+<section class="fxt-template-animation fxt-template-layout22" data-bg-image="images/holi-sim.jpeg">
+		<!-- Star Animation Start Here -->
+		<div class="star-animation">
+			<div id="stars1"></div>
+			<div id="stars2"></div>
+			<div id="stars3"></div>
+			<div id="stars4"></div>
+			<div id="stars5"></div>
+		</div>
+		<!-- Star Animation End Here -->
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6 col-12 fxt-none-991">
+					<div class="fxt-header">
+						<div class="fxt-transformY-50 fxt-transition-delay-1">
+							{{!-- <a class="fxt-logo"><img src="images/mis.png" alt="Logo"></a> --}}
+							<a class="fxt-logo"><img src="images/holi-misp.png" alt="Logo" style="height: 100%; width:100%"></a>
+						</div>
+						<div class="fxt-transformY-50 fxt-transition-delay-2">
+							{{!-- <h1>Welcome To MIS Portal</h1> --}}
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-lg-6 col-12 fxt-bg-color">
+					<div class="fxt-content">
+						<div class="fxt-form">
+							<h2 class="rainbow">LOGIN</h2>
+							{{!-- <p>Welcome To MIS Portal</p> --}}
+							<p>Welcome To MIS Portal</p>
+							<form id="login-form">
+								<div class="form-group">
+									<label for="email" class="input-label">Username</label>
+									<input type="text" id="userId" class="form-control" name="email" placeholder="Enter Username" required="required">
+								</div>
+								<div class="form-group">
+									<label for="password" class="input-label">Password</label>
+									<input id="userPass" type="password" class="form-control" name="password" placeholder="Enter Password" required="required">
+									<i toggle="#userPass" class="fa fa-fw fa-eye toggle-password field-icon"></i>
+								</div>
+								<div class="form-group">
+									<div class="fxt-checkbox-area">
+										<div class="checkbox">
+											<input id="checkbox1" type="checkbox">
+											<label for="checkbox1">Keep me logged in</label>
+										</div>
+										
+									</div>
+								</div>
+								<div class="form-group">
+									<button type="submit" class="fxt-btn-fill">Log in</button>
+								</div>
+							</form>
+						</div>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
